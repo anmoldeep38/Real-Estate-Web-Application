@@ -1,8 +1,36 @@
 // eslint-disable-next-line no-unused-vars
-import React from "react";
+import Link from "react-roter-dom";
 
-const SignUp = () => {
-  return <div>Signout</div>;
-};
-
-export default SignUp;
+export default function SignUp() {
+  return (
+    <div className="p-3 max-w-lg mx-auto">
+      <h1 className="tecxt-3xl text-center font-semibold my-7">Sign Up</h1>
+      <form className="flex flex-col gap-4">
+        <input
+          type="text"
+          placeholder="username"
+          className="border p-3 rounded-lg"
+          id="username"
+        />
+        <input
+          type="email"
+          placeholder="email"
+          className="border p-3 rounded-lg"
+          id="email"
+        />
+        <input
+          type="password"
+          placeholder="password"
+          className="border p-3 rounded-lg"
+          id="password"
+        />
+        <div className="flex gap-2 mt-5">
+          <p>Have an account?</p>
+          <Link to={"/sign-in"}>
+            <span className="text-blue-700">Sign in</span>
+          </Link>
+        </div>
+      </form>
+    </div>
+  );
+}
